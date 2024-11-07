@@ -19,7 +19,7 @@ code = "https://github.com/TomBursch/kitchenowl"
 fund = "https://github.com/sponsors/TomBursch"
 
 [integration]
-yunohost = ">= 11.2.3"
+yunohost = ">= 12.0"
 architectures = ["amd64", "arm64"]
 multi_instance = true
 ldap = false
