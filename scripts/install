@@ -23,8 +23,7 @@ ynh_add_nginx_config
 
 ynh_script_progression --message="Adding a configuration file..."
 
-ynh_setup_source --dest_dir="$install_dir/" --source_id="front"
-ynh_setup_source --dest_dir="$install_dir/backend" --source_id="backend"
+ynh_setup_source --dest_dir="$install_dir/" --source_id="main"
 
 key=$(ynh_string_random --length=45 | base64)
 ynh_app_setting_set --app=$app --key=key --value=$key
@@ -52,7 +51,7 @@ ynh_script_progression --message="Installing Python dependencies..." --weight=3
 pushd $install_dir/backend
 	python3 -m venv $install_dir/backend/venv
 	source $install_dir/backend/venv/bin/activate
-        ynh_exec_warn_less pip3 install --upgrade pip pyyaml
+    ynh_exec_warn_less pip3 install --upgrade pip pyyaml
 	ynh_exec_warn_less pip3 install -r requirements.txt
 popd
 
