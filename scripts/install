@@ -55,6 +55,8 @@ pushd $install_dir/backend
 	ynh_exec_warn_less pip3 install -r $install_dir/backend/requirements.txt
 popd
 
+chown -R $app:$app "$install_dir/backend"
+
 #=================================================
 # CREATE DATA DIRECTORY
 #=================================================
